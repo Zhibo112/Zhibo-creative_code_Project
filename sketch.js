@@ -7,3 +7,9 @@ function setup(){
 function draw(){
     ellipse(mouseX,mouseY,mouseX,mouseY)
 }
+
+function windowResized(){
+    resizeCanvas(windowWidth,windowHeight);
+    background(200,120,120)
+
+}
