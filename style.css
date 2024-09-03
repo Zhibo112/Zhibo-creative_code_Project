@@ -10,8 +10,8 @@ canvas {
 
 .title {
     font-family: "Gruppo", sans-serif;
-    font-weight: 1000;
-    font-size: clamp(6rem, 2rem + 10vmin, 16rem);
+    font-weight: 500;
+    font-size: 120px;
     letter-spacing: 0px;
     color: white;
     opacity: 0.9;
