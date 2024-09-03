@@ -7,13 +7,11 @@ function setup(){
 function draw(){
     background(203, 209, 212);
     let angle = frameCount * 0.01;
-  rotateZ(angle);
+  rotateY(angle);
     orbitControl();
-    noStroke()
     let c = color(0, 255, 42);
   directionalLight(c, 1, -1, -1);
-    
-    sphere();
+    sphere(70);
 }
 
 
