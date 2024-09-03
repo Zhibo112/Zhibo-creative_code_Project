@@ -1,15 +1,18 @@
 function setup(){
-    createCanvas(windowWidth,windowHeight)
-    background(200, 120, 120);
+    createCanvas(windowWidth,windowHeight, WEBGL)
+    
  
 }
 
 function draw(){
-    ellipse(mouseX,mouseY,mouseX,mouseY)
+    background(203, 209, 212);
+    let angle = frameCount * 0.01;
+  rotateY(angle);
+    orbitControl();
+    sphere();
 }
 
-function windowResized(){
-    resizeCanvas(windowWidth,windowHeight);
-    background(200,120,120)
 
-}
+
+
+
