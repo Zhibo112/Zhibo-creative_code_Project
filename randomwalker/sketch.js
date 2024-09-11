@@ -29,7 +29,7 @@ class Walker {
    stroke(0, 204, 71);
    text('There', random(4000), random(4000))
    text('Everywhere', random(4000), random(4000))
-   textSize(32);
+   textSize(random(10,50));
   
    
 
