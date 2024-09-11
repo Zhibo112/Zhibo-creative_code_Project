@@ -1,53 +1,53 @@
-let f;
-function preload(){
-    
-}
+let walker;
+
 
 function setup() {
-  createCanvas(400, 400);
-  
-  
+  createCanvas(windowWidth,windowHeight);
+  walker= new Walker();
+ background(0);
 }
 
 function draw() {
-  //background(220);
-  
-  let f= new Face;
-  f.display();
-}
-//blueprint for a face object
+  walker.step();
+  walker.show();
 
-class Face {
+   
+}
+
+
+class Walker {
  
-  //properties
+  //propertie
  constructor(){
-   this.size = random(50,70);
-   this.x =random(width);
-   this.y = random(height);
-   this.skinColor = color(random(256),random(256),random(256));
-   this.eyeDistance = 10;
-   this.eyeHeight = 10;
-   this.eyeSize = 40;
-   this.eyeColor= random(0,256);
+   this.x=width/2
+   this.y=height/2
+ }
+
+ show(){
+   
+   text('Here', this.x, this.y)
+   stroke(0, 204, 71);
+   text('There', random(4000), random(4000))
+   text('Everywhere', random(4000), random(4000))
+   textSize(32);
+  
+   
+
  }
   
   //method
-  display(){
-    fill(this.skinColor)
-    ellipse(this.x, this.y, this.size);
-    //left eye
-    
-    fill(this.eyeColor);
-    
-    text("👽",this.x-this.eyeDistance,this.y-this.eyeHeight, this.size-this.eyeSize);
-    //right eye
-    fill(this.eyeColor+50)
-    text("👽",this.x+this.eyeDistance,this.y-this.eyeHeight, this.size-this.eyeSize);
-    
-    
+  step(){
+     const place = floor(random(4));
+    if (place == 0) {
+      this.x++;
+    } else if (place == 1) {
+      this.x--
+    } else if (place == 2) {
+      this.y++;
+    } else {
+      this.y--;
+    }
   }
-  
-
 
 
 
