@@ -4,6 +4,7 @@ let w = 1200;
 let h = 900;
 let flying = 0;
 var mic
+let started = false;
 
 let terrainVectors = [];
 
@@ -11,8 +12,7 @@ function setup() {
   createCanvas(windowWidth,windowHeight, WEBGL);
   cols = w / scls;
   rows = h / scls;
-  mic= new p5.AudioIn
-  mic.start()
+  
   // let yoff = 0;
   // for (let y = 0; y < rows; y++) {
   //   let xoff = 0;
@@ -24,9 +24,23 @@ function setup() {
   //   }
   //   yoff += 0.01;
   // }
+  noLoop();
+}
+
+function mousePressed() {
+  if(started == false) {
+    mic= new p5.AudioIn
+    mic.start()
+    loop();
+    started = true;
+  }
 }
 
 function draw() {
+
+  if(started == true) {
+
+  
 
   var vol= mic.getLevel()
   flying -= 0.1;
@@ -60,4 +74,5 @@ noStroke()
     }
     endShape();
   }
+}
 }
