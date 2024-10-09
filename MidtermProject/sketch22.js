@@ -12,6 +12,7 @@ function setup() {
   createCanvas(windowWidth,windowHeight, WEBGL);
   cols = w / scls;
   rows = h / scls;
+  getAudioContext().suspend();
   
   // let yoff = 0;
   // for (let y = 0; y < rows; y++) {
@@ -32,6 +33,7 @@ function mousePressed() {
     mic= new p5.AudioIn
     mic.start()
     loop();
+    getAudioContext().resume()
     started = true;
   }
 }
