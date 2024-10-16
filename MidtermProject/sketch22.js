@@ -35,7 +35,7 @@ function draw() {
     var vol = mic.getLevel();
 
     // 增加灵敏度的增益值
-    let sensitivity = 600; 
+    let sensitivity = 1100; 
     var mappedVol = map(vol, 0, 1, -sensitivity, sensitivity); 
 
     flying -= 0.1;
