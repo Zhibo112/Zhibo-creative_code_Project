@@ -27,7 +27,7 @@ function mousePressed() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, wsindowHeight);
 }
 
 function draw() {
@@ -51,9 +51,9 @@ function draw() {
       yoff += 0.1;
     }
 
-    background(255);
+    background(0,0,0);
     noStroke();
-    fill(138, 165, 207);
+    fill(255, 255, 255);
     rotateY(PI / 1);
     translate(-w / 2, -h / 2 + 70);
 
