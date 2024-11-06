@@ -1,0 +1,37 @@
+let balls = []
+
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+    noFill()
+  
+    frameRate(50)
+    createLoop({duration: 4, gif: false})
+}
+
+function draw() {
+    //background(255)
+    translate(width / 2, height / 2)
+    const radius = mouseX / 2
+
+    for (let i = 0; i < balls.length; i++) {
+        let ball = balls[i]
+        const x = cos(animLoop.theta + ball.offset) * radius + 10
+        const y = sin(animLoop.theta + ball.offset) * radius + 10
+        
+        ellipse(x, y, 12, 12)
+
+        if (i > 0) {
+            const prevBall = balls[i - 1]
+            const prevX = cos(animLoop.theta + prevBall.offset) * radius + 10
+            const prevY = sin(animLoop.theta + prevBall.offset) * radius + 10
+            line(prevX, prevY, x, y)
+        }
+    }
+}
+
+function mousePressed() {
+    let ball = {
+        offset: balls.length + random(100, 300) 
+    }
+    balls.push(ball)
+}
